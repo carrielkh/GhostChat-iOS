@@ -4,7 +4,9 @@
 3. Does not use the Internet. Secure and off the Cloud.  
 
 # Screen Shot
-![ScreenShot](https://github.com/samuraipapa/GhostChat-iOS/blob/master/screen.png) 
+![ScreenShot](https://github.com/samuraipapa/GhostChat-iOS/blob/master/screen1.jpg) 
+![ScreenShot](https://github.com/samuraipapa/GhostChat-iOS/blob/master/screen2.jpg) 
+
 
 # Code Runs On:
 + iOS 8.3+
