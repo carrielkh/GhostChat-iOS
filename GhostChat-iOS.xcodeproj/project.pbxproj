@@ -13,9 +13,8 @@
 		6C7849191AED4DD50054DBED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7849181AED4DD50054DBED /* Images.xcassets */; };
 		6C78491C1AED4DD50054DBED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C78491A1AED4DD50054DBED /* LaunchScreen.xib */; };
 		6C7849281AED4DD50054DBED /* GhostChat_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7849271AED4DD50054DBED /* GhostChat_iOSTests.swift */; };
-		A87469011B0050C9009B9F06 /* ghost1.png in Resources */ = {isa = PBXBuildFile; fileRef = A87469001B0050C9009B9F06 /* ghost1.png */; };
-		A87469031B006804009B9F06 /* Untitled-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A87469021B006804009B9F06 /* Untitled-2.png */; };
 		A87469051B006E98009B9F06 /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = A87469041B006E98009B9F06 /* Refresh.png */; };
+		A87469071B00729D009B9F06 /* ghostg.png in Resources */ = {isa = PBXBuildFile; fileRef = A87469061B00729D009B9F06 /* ghostg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +38,8 @@
 		6C7849211AED4DD50054DBED /* GhostChat-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GhostChat-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7849261AED4DD50054DBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C7849271AED4DD50054DBED /* GhostChat_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostChat_iOSTests.swift; sourceTree = "<group>"; };
-		A87469001B0050C9009B9F06 /* ghost1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghost1.png; sourceTree = "<group>"; };
-		A87469021B006804009B9F06 /* Untitled-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled-2.png"; sourceTree = "<group>"; };
 		A87469041B006E98009B9F06 /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		A87469061B00729D009B9F06 /* ghostg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghostg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +86,8 @@
 				6C7849151AED4DD50054DBED /* Main.storyboard */,
 				6C7849181AED4DD50054DBED /* Images.xcassets */,
 				6C78491A1AED4DD50054DBED /* LaunchScreen.xib */,
-				A87469001B0050C9009B9F06 /* ghost1.png */,
+				A87469061B00729D009B9F06 /* ghostg.png */,
 				A87469041B006E98009B9F06 /* Refresh.png */,
-				A87469021B006804009B9F06 /* Untitled-2.png */,
 				6C78490F1AED4DD50054DBED /* Supporting Files */,
 			);
 			path = "GhostChat-iOS";
@@ -202,11 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7849171AED4DD50054DBED /* Main.storyboard in Resources */,
-				A87469031B006804009B9F06 /* Untitled-2.png in Resources */,
 				6C78491C1AED4DD50054DBED /* LaunchScreen.xib in Resources */,
+				A87469071B00729D009B9F06 /* ghostg.png in Resources */,
 				A87469051B006E98009B9F06 /* Refresh.png in Resources */,
 				6C7849191AED4DD50054DBED /* Images.xcassets in Resources */,
-				A87469011B0050C9009B9F06 /* ghost1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

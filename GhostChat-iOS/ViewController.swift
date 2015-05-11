@@ -46,10 +46,12 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var myTextField: UITextField!
 
+    @IBOutlet weak var send: UIButton!
     @IBOutlet weak var myLabel: UILabel!
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
-
+        animationButton()
+       
     }
     
     @IBAction func refreshPressed(sender: UIButton) {
@@ -87,6 +89,28 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+     // MARK: - Animation
+    func animationButton(){
+        var sendx = send.center.x
+        var sendy = send.center.y
+        UIView.animateWithDuration(0.5, animations: {
+            self.send.frame = CGRect(x: sendx, y: sendy, width: 40, height: 40)
+            self.view.addSubview(self.send)
+            let path = UIBezierPath()
+            path.moveToPoint(CGPoint(x:sendx,y: sendy))
+            
+            path.addCurveToPoint(CGPoint(x: sendx+20, y: sendy), controlPoint1: CGPoint(x: sendx+5, y: sendy), controlPoint2: CGPoint(x: sendx+15, y: sendy))
+            let anim = CAKeyframeAnimation(keyPath: "position")
+            anim.path = path.CGPath
+            anim.rotationMode = kCAAnimationRotateAuto
+            anim.repeatCount = 0
+            anim.duration = 0.5
+                self.send.layer.addAnimation(anim, forKey: "animate position along path")
+        })
+        
+
+    
     }
     
     // MARK: - Helper Functions
