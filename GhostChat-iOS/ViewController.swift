@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import QuartzCore
 
 
 class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
@@ -45,6 +46,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var myTextField: UITextField!
 
+    @IBOutlet weak var myLabel: UILabel!
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
 
@@ -54,6 +56,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         myCentralManager.stopScan()
         refreshArrays()
         startScanning()
+        myLabel.text = "There are \( cleanAndSortedArray.count) ghosts around you."
         
     }
     
@@ -63,6 +66,21 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         advertiseNewName(myTextField.text)
         putPeripheralManagerIntoMainQueue()
         
+           myLabel.text = "There are \( cleanAndSortedArray.count) ghosts around you."
+
+        nameField.layer.cornerRadius = 8.0;
+        nameField.layer.masksToBounds = true
+       nameField.layer.borderWidth = 1.0;
+        nameField.layer.borderColor = UIColor.whiteColor().CGColor
+        myTextField.layer.cornerRadius = 8.0;
+        myTextField.layer.masksToBounds = true
+        myTextField.layer.borderWidth = 1.0;
+        myTextField.layer.borderColor = UIColor.whiteColor().CGColor
+        tableView.layer.cornerRadius = 8.0;
+        tableView.layer.masksToBounds = true
+        tableView.layer.borderWidth = 1.0;
+        tableView.layer.borderColor = UIColor.whiteColor().CGColor
+    
 
     }
 
@@ -208,6 +226,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         
         // Start Advertising The Packet
         myPeripheralManager?.startAdvertising(dataToBeAdvertised)
+        myLabel.text = "There are \( cleanAndSortedArray.count) ghosts around you."
     }
     func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager!, error: NSError!) {
         //
@@ -339,7 +358,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
                 })
                 
                 return
-                
+     
             }
         }
         
@@ -364,7 +383,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             (str1: (String,String,String,String) , str2: (String,String,String,String) ) -> Bool in
             return str1.1.toInt() > str2.1.toInt()
         })
-        
+           myLabel.text = "There are \( cleanAndSortedArray.count) ghosts around you."
         tableView.reloadData()
         
     }
@@ -412,13 +431,23 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             return cell}
         
     }
-    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.backgroundColor = UIColor.clearColor() //make the background color light blue
+        header.textLabel.textColor = UIColor.whiteColor()
+        header.textLabel.font = UIFont(name: "Didot", size: 17.0)
+        header.textLabel.backgroundColor = UIColor.clearColor()
+        header.contentView.backgroundColor = UIColor.blackColor()//make the text white
+        header.alpha = 1.0
+    }
+
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "Chat Activity"
+        
+            return "Chatting Ghosts"
         }else if section == 1{
-            tableView.sectionIndexColor = UIColor.darkGrayColor()
-            return "BackGround Devices"
+        
+            return "Mute Ghosts"
         } else {
             return "Misc"
         }
