@@ -49,6 +49,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     @IBOutlet weak var send: UIButton!
     @IBOutlet weak var myLabel: UILabel!
     @IBAction func sendButtonPressed(sender: UIButton) {
+        textFieldShouldReturn(myTextField)
+        textFieldShouldReturn(nameField)
         advertiseNewName(myTextField.text)
         animationButton()
        
@@ -155,7 +157,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
-       
+    
     // MARK:  - CBPeripheral
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
         
