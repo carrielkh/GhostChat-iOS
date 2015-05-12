@@ -152,7 +152,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         textField.resignFirstResponder()
         return false
     }
-    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.text = ""
+    }
+       
     // MARK:  - CBPeripheral
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
         
