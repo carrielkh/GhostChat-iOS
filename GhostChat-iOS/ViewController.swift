@@ -11,7 +11,7 @@ import CoreBluetooth
 import QuartzCore
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate,UITextFieldDelegate {
 
     // MARK: - Globals
     
@@ -148,7 +148,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         
     }
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
     
     // MARK:  - CBPeripheral
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
